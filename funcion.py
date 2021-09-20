@@ -1,4 +1,2 @@
-saludo = "como estamos"
-print(saludo)
-hola = "saludo"
-print(hola)
+kaixooo = "hola, en español"
+print(kaixooo)
