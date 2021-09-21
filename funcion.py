@@ -1,7 +1,7 @@
 x = int(input("ingrese primero numero: "))
 y = int(input("ingrese segundo numero: "))
 z = int(input("ingrese tercer numero: "))
-print("el maximo entre", x, ",", y, "y", z, "es", max(x, y), z)
+print("el maximo entre", x, ",", y, "y", z, "es", max(x, y, z), )
 
 
 def max(a, b,):
