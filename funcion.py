@@ -36,11 +36,11 @@ while i < 3:
         while not esnumero(cantidad):
             cantidad = input("indique la cantidad de "+moneda+": ")
         else:
-            cantidades.append(cantidad)
+            cantidades.append(float(cantidad)
     i += 1
 
-i = 0
-total = 0
+i=0
+total=0
 
 while i < 3:
     total += cantidades[i]*cotizaciones[i]
