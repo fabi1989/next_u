@@ -1,15 +1,12 @@
-valid_alpha_user = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890-_."
+edades = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]
 
-while True:
-    user = input("ingrese el nombre de usuario")
-    if (len(user) > 4):
-        a = set(valid_alpha_user)
-        b = set(user)
-        if len(b-a) > 0:
-            print("usuario invalido.")
-            continue
-        else:
-            print("usuario valido.")
-            break
+mapa_edades = {}
+
+for edad in edades:
+    if edad in mapa_edades:
+        mapa_edades[edad] += 1
     else:
-        print("usuario invalido.")
+        mapa_edades[edad] = 1
+
+for valor in sorted(mapa_edades):
+    print(f'{valor}: {"*"*mapa_edades[valor]}')
