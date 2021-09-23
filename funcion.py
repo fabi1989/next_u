@@ -1,52 +1,15 @@
-import requests
-_ENDPOINT = "https://api.binance.com"
+valid_alpha_user = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890-_."
 
-
-def _url(api):
-    return _ENDPOINT+api
-
-
-def get_price(cripto):
-    return requests.get(_url("/api/v3/ticker/price?symbol="+cripto))
-
-
-def esmoneda(cripto):
-    criptos = ["BTC", "BCC", "LTC", "ETH", "ETC", "XRP"]
-    return cripto in criptos
-
-
-def esnumero(numero):
-    return numero.replace('.', '', 1).isdigit()
-
-
-monedas = []
-cantidades = []
-cotizaciones = []
-i = 0
-while i < 3:
-    moneda = input("ingrese el nombre de la moneda: ")
-    while not esmoneda(moneda):
-        print("moneda invalida.")
-        monedas = input("ingrese el nombre de la moneda: ")
-    else:
-        monedas.append(moneda)
-        data = get_price(moneda+"USDT").json()
-        cotizaciones.append(float(data["price"]))
-        cantidad = input("indique la cantidad de "+moneda+": ")
-        while not esnumero(cantidad):
-            cantidad = input("indique la cantidad de "+moneda+": ")
+while True:
+    user = input("ingrese el nombre de usuario")
+    if (len(user) > 4):
+        a = set(valid_alpha_user)
+        b = set(user)
+        if len(b-a) > 0:
+            print("usuario invalido.")
+            continue
         else:
-            cantidades.append(float(cantidad))
-    i += 1
-
-i = 0
-total = 0
-
-while i < 3:
-    total += cantidades[i]*cotizaciones[i]
-    print("moneda: ", monedas[i],
-          ", cantidad: ", cantidades[i],
-          ", cotizaciones: ", cotizaciones[i],
-          ", cantidad de USDT: ", cantidades[i]*cotizaciones[i])
-    i += 1
-print("total en USDT es: ", str(total))
+            print("usuario valido.")
+            break
+    else:
+        print("usuario invalido.")
