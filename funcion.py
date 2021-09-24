@@ -1,12 +1,21 @@
-edades = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]
+nombre_archivo = input(
+    "ingrese el nombre del archivo que contiene las palabras: ")
+archivo = open(nombre_archivo, "r")
 
-mapa_edades = {}
+texto = archivo.read()
+palabras = texto.split()
+ocurrencias = {}
 
-for edad in edades:
-    if edad in mapa_edades:
-        mapa_edades[edad] += 1
+for palabra in palabras:
+    if ocurrencias.get(palabra):
+        ocurrencias[palabra] += 1
     else:
-        mapa_edades[edad] = 1
+        ocurrencias[palabra] = 1
 
-for valor in sorted(mapa_edades):
-    print(f'{valor}: {"*"*mapa_edades[valor]}')
+maxpar = None, 0
+for palabra, cantidad in ocurrencias.items():
+    if maxpar[1] < cantidad:
+        maxpar = palabra, cantidad
+
+print("la palabra con mayor cantidad de repeticion es",
+      maxpar[0], "repetida", maxpar[1], "veces")
