@@ -1,21 +1,11 @@
-nombre_archivo = input(
-    "ingrese el nombre del archivo que contiene las palabras: ")
-archivo = open(nombre_archivo, "r")
-
-texto = archivo.read()
-palabras = texto.split()
-ocurrencias = {}
-
-for palabra in palabras:
-    if ocurrencias.get(palabra):
-        ocurrencias[palabra] += 1
+def fib(n):
+    if n < 2:
+        return n
     else:
-        ocurrencias[palabra] = 1
+        return fib(n-1) + fib(n-2)
 
-maxpar = None, 0
-for palabra, cantidad in ocurrencias.items():
-    if maxpar[1] < cantidad:
-        maxpar = palabra, cantidad
 
-print("la palabra con mayor cantidad de repeticion es",
-      maxpar[0], "repetida", maxpar[1], "veces")
+for x in range(10):
+    print(fib(x))
+
+fib(8)
