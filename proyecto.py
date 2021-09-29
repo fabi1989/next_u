@@ -7,8 +7,8 @@ i=0
 
 while i <=3:
     print("que opcion desea realizar: ")
-    moneda=input("solicitar moneda, cantidad a recibir, codigo: ")
-    while not opciones(moneda):
+    opcion=input("recibir cantidad, transferir monto, mostrar balance de una moneda, mostrar balance general, mostrar historico de transacciones, salir de programa: ")
+    while not opciones(opcion):
         print("opcion invalida.")
         lasopciones =input("ingrese correctamente la opcion a realizar: ")
 
