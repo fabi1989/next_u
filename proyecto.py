@@ -1,10 +1,17 @@
-import requests
-_ENDPOINT = "https://api.binance.com"
+def opciones(primeraopcion):
+    opcion = ["solicitar moneda","cantidad a recibir","codigo"]
+    return primeraopcion in opcion
+
+lasopciones=[]
+i=0
+
+while i <=3:
+    print("que opcion desea realizar: ")
+    moneda=input("solicitar moneda, cantidad a recibir, codigo: ")
+    while not opciones(moneda):
+        print("opcion invalida.")
+        lasopciones =input("ingrese correctamente la opcion a realizar: ")
 
 
-def _url(api):
-    return _ENDPOINT+api
 
 
-def get_price(cripto):
-    return requests.get(_url("/api/v3/ticker/price?symbol="+cripto))
