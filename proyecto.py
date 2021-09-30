@@ -4,12 +4,12 @@ import os
 clear = lambda: os.system('cls')
 
 monedas = [
-    'BTC',
-    'BCC',
-    'ETH',
-    'XRP',
-    'LTC',
-    'ETC',
+    '1. BTC',
+    '2. BCC',
+    '3. ETH',
+    '4. XRP',
+    '5. LTC',
+    '6. ETC',
 ]
 
 
@@ -19,9 +19,9 @@ def recibir_cantidad():
     print('Tipos de moneda:')
 
     for moneda in monedas:
-        print('1. ', moneda)
+        print('', moneda)
         
-    tipo_de_moneda = input('Ingrese su tipo de moneda: ')
+    tipo_de_moneda = int(input('Ingrese su tipo de moneda: '))
     print(tipo_de_moneda)
 
     cantidad_a_recibir =int(input("Cantidad a recibir es de: "))
@@ -32,8 +32,9 @@ def transferir_monto():
     print('--------------------')
     print('Tipos de moneda: ')
 
+    
     for moneda in monedas:
-        print('1. ', moneda)
+        print('', moneda)
     
     tipo_de_moneda = input('Ingrese tipo de moneda: ')
     print(tipo_de_moneda)
@@ -46,7 +47,7 @@ def mostrar_balance_una_moneda():
     print('Tipos de Monedas:')
 
     for moneda in monedas:
-        print('1. ',moneda)
+        print('',moneda)
 
     tipo_de_moneda = input('Ingrese tipo de moneda: ')
     print(tipo_de_moneda)
